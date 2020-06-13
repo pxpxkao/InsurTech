@@ -1,3 +1,8 @@
+.DS_Store
+data
+models.mwb
+models.mwb.bak
+
 # Logs
 logs
 *.log
