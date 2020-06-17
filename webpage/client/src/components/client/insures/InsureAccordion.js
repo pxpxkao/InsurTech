@@ -7,29 +7,13 @@ import InsureList from "./InsureList";
 
 class InsureAccordion extends Component {
   render() {
-    let { disabled } = this.props;
+    let { disabled, insures } = this.props;
     let colors = ["primary", "success", "warning", "info", "dark", "secondary"];
     let btn_colors = disabled.map((d, idx) => {
       if (d === 1) return colors[5];
       return colors[idx];
     });
-    let insures = {
-      worker: [
-        { name: "人事保證保險", prob: 80 },
-        { name: "員工誠實保證保險", prob: 90 },
-        { name: "團體傷害保險", prob: 75 },
-        { name: "團體職業災害補償保險", prob: 78 },
-        { name: "團體健康保險-福氣安康專案", prob: 65 },
-        { name: "員工健康保險-世紀安康專案", prob: 70 },
-      ],
-      employ: [
-        { name: "僱主補償契約責任保險", prob: 80 },
-        { name: "僱主意外責任保險", prob: 90 },
-      ],
-      product: [{ name: "產品責任保險", prob: 90 }],
-      public: [{ name: "公共意外責任保險", prob: 78 }],
-      money: [{ name: "現金保險", prob: 55 }],
-    };
+    // if (insures === null) return <div>Loading...</div>;
     return (
       <div class="accordion mt-2 mb-1" id="accordion1">
         <button
@@ -136,79 +120,20 @@ class InsureAccordion extends Component {
 
 export default InsureAccordion;
 
-{
-  /* <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <a
-                  href="https://www.cathay-ins.com.tw/cathayins/commercial/others/engineeringinsurence/"
-                  target="_blank"
-                >
-                  <h6>電子設備綜合保險</h6>
-                  <div className="progress">
-                    <div
-                      className="progress-bar progress-bar-striped bg-primary"
-                      role="progressbar"
-                      style={{ width: "85%" }}
-                      aria-valuenow="85"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a
-                  href="https://www.cathay-ins.com.tw/cathayins/commercial/others/operationinsurence/"
-                  target="_blank"
-                >
-                  <h6>公共意外責任保險</h6>
-                  <div className="progress">
-                    <div
-                      className="progress-bar progress-bar-striped bg-success"
-                      role="progressbar"
-                      style={{ width: "75%" }}
-                      aria-valuenow="75"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a
-                  href="https://www.cathay-ins.com.tw/cathayins/commercial/others/operationinsurence/"
-                  target="_blank"
-                >
-                  <h6>僱主意外責任險</h6>
-                  <div className="progress">
-                    <div
-                      className="progress-bar progress-bar-striped bg-info"
-                      role="progressbar"
-                      style={{ width: "72%" }}
-                      aria-valuenow="72"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </a>
-              </li>
-              <li class="list-group-item">
-                <a
-                  href="https://www.cathay-ins.com.tw/cathayins/commercial/others/operationinsurence/"
-                  target="_blank"
-                >
-                  <h6>現金保險</h6>
-                  <div className="progress">
-                    <div
-                      className="progress-bar progress-bar-striped bg-warning"
-                      role="progressbar"
-                      style={{ width: "55%" }}
-                      aria-valuenow="55"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </a>
-              </li>
-            </ul> */
-}
+// let insures = {
+//   worker: [
+//     { name: "人事保證保險", prob: 80 },
+//     { name: "員工誠實保證保險", prob: 90 },
+//     { name: "團體傷害保險", prob: 75 },
+//     { name: "團體職業災害補償保險", prob: 78 },
+//     { name: "團體健康保險-福氣安康專案", prob: 65 },
+//     { name: "員工健康保險-世紀安康專案", prob: 70 },
+//   ],
+//   employ: [
+//     { name: "僱主補償契約責任保險", prob: 80 },
+//     { name: "僱主意外責任保險", prob: 90 },
+//   ],
+//   product: [{ name: "產品責任保險", prob: 90 }],
+//   public: [{ name: "公共意外責任保險", prob: 78 }],
+//   money: [{ name: "現金保險", prob: 55 }],
+// };

@@ -1,9 +1,5 @@
-// For Redux
-import { Provider } from "react-redux";
-import store from "./store";
-
 // For Router
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import React from "react";
 import "./App.css";
@@ -20,8 +16,8 @@ function App() {
         <AppNavbar />
         <div className="container" style={{ marginTop: "100px" }}>
           <Switch>
-            <Route path="/server" component={TestServer} />
-            <Route path="/client/:id" component={ClientRender} />
+            {/* <Route path="/server" component={TestServer} /> */}
+            <Route path="/clientinfo/:id" component={ClientRender} />
             <Route path="/location/:id" component={ClientTable} />
             <Route exact path="/" component={Homepage} />
           </Switch>

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import data from "../components/client/data";
+import { cities } from "../utils";
 
 export class Homepage extends Component {
   render() {
-    const north = data.cities.filter((c) => c.dist === "北區");
-    const south = data.cities.filter((c) => c.dist === "南區");
-    const central = data.cities.filter((c) => c.dist === "中區");
-    const east = data.cities.filter((c) => c.dist === "東區");
+    const north = cities.filter((c) => c.dist === "北區");
+    const south = cities.filter((c) => c.dist === "南區");
+    const central = cities.filter((c) => c.dist === "中區");
+    const east = cities.filter((c) => c.dist === "東區");
     return (
       <div className="container">
         <h3 className="mt-2 mb-4 text-center">北區</h3>

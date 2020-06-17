@@ -4,12 +4,12 @@ import { insure_colors, insure_url } from "../../../utils";
 class InsureList extends Component {
   render_insure = (insure, idx) => {
     return (
-      <div class="justify-content-between align-items-center my-2">
+      <div className="justify-content-between align-items-center my-2">
         <a href={insure_url[insure.name]} target="_blank">
           <h6>{insure.name}</h6>
           <div className="progress">
             <div
-              className={`progress-bar progress-bar-striped bg-${
+              className={`progress-bar progress-bar bg-${
                 insure_colors[idx % 6]
               }`}
               role="progressbar"
@@ -17,18 +17,24 @@ class InsureList extends Component {
               aria-valuenow={insure.prob}
               aria-valuemin="0"
               aria-valuemax="100"
-            ></div>
+            >
+              <div>{insure.prob}%</div>
+            </div>
           </div>
         </a>
       </div>
     );
   };
   render() {
-    const { insures, color } = this.props;
-    console.log(insures);
+    let { insures, color } = this.props;
+    // sort by value
+    insures = insures.sort(function (a, b) {
+      return b.prob - a.prob;
+    });
+    // console.log(insures);
     return (
-      <div class="my-2 mx-3">
-        <hr class="my-1" />
+      <div className="my-2 mx-3">
+        <hr className="my-1" />
         {insures ? (
           insures.map((insure, idx) => this.render_insure(insure, color))
         ) : (
@@ -40,24 +46,3 @@ class InsureList extends Component {
 }
 
 export default InsureList;
-
-{
-  /* <li class="list-group-item">
-  <a
-    href="https://www.cathay-ins.com.tw/cathayins/commercial/others/operationinsurence/"
-    target="_blank"
-  >
-    <h6>現金保險</h6>
-    <div className="progress">
-      <div
-        className="progress-bar progress-bar-striped bg-warning"
-        role="progressbar"
-        style={{ width: "55%" }}
-        aria-valuenow="55"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      ></div>
-    </div>
-  </a>
-</li>; */
-}

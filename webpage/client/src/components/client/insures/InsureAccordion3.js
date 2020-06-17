@@ -5,19 +5,13 @@ import InsureList from "./InsureList";
 
 class InsureAccordion3 extends Component {
   render() {
-    let { disabled } = this.props;
+    let { disabled, insures } = this.props;
     let colors = ["primary", "success", "warning", "info", "dark", "secondary"];
     let btn_colors = disabled.map((d, idx) => {
       if (d === 1) return colors[5];
       return colors[idx];
     });
-    let insures = {
-      boiler: [],
-      machine: [],
-      construct: [],
-      install: [],
-      machinery: [],
-    };
+
     return (
       <div class="accordion my-1" id="accordion3">
         <button
@@ -123,3 +117,11 @@ class InsureAccordion3 extends Component {
 }
 
 export default InsureAccordion3;
+
+// let insures = {
+//   boiler: [],
+//   machine: [],
+//   construct: [],
+//   install: [],
+//   machinery: [],
+// };

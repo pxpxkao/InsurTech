@@ -5,22 +5,13 @@ import InsureList from "./InsureList";
 
 class InsureAccordion4 extends Component {
   render() {
-    let { disabled } = this.props;
+    let { disabled, insures } = this.props;
     let colors = ["primary", "success", "warning", "info", "dark", "secondary"];
     let btn_colors = disabled.map((d, idx) => {
       if (d === 1) return colors[5];
       return colors[idx];
     });
-    let insures = {
-      sea: [],
-      faculty: [],
-      supervisor: [{ name: "董監事及經理人責任保險", prob: 80 }],
-      tourism: [],
-      medicine: [
-        { name: "醫師業務責任險", prob: 65 },
-        { name: "藥師與藥劑生業務責任保險", prob: 77 },
-      ],
-    };
+
     return (
       <div class="accordion mt-1 mb-2" id="accordion4">
         <button
@@ -126,3 +117,14 @@ class InsureAccordion4 extends Component {
 }
 
 export default InsureAccordion4;
+
+// let insures = {
+//   sea: [],
+//   faculty: [],
+//   supervisor: [{ name: "董監事及經理人責任保險", prob: 80 }],
+//   tourism: [],
+//   medicine: [
+//     { name: "醫師業務責任險", prob: 65 },
+//     { name: "藥師與藥劑生業務責任保險", prob: 77 },
+//   ],
+// };

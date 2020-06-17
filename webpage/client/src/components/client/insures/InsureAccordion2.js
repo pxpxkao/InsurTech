@@ -5,25 +5,17 @@ import InsureList from "./InsureList";
 
 class InsureAccordion2 extends Component {
   render() {
-    let { disabled } = this.props;
+    let { disabled, insures } = this.props;
     let colors = ["primary", "success", "warning", "info", "secondary"];
-    let outlines = disabled.map((d) => {
-      if (d) return "";
-      return "-outline";
-    });
+    // let outlines = disabled.map((d) => {
+    //   if (d) return "";
+    //   return "-outline";
+    // });
     let btn_colors = disabled.map((d, idx) => {
       if (d === 1) return colors[4];
       return colors[idx];
     });
-    let insures = {
-      building: [
-        { name: "商業火災保險", prob: 95 },
-        { name: "商業火災綜合保險", prob: 85 },
-      ],
-      electric: [{ name: "電子設備綜合保險", prob: 85 }],
-      traffic: [],
-      transport: [],
-    };
+
     return (
       <div class="accordion my-1" id="accordion2">
         <button
@@ -110,3 +102,13 @@ class InsureAccordion2 extends Component {
 }
 
 export default InsureAccordion2;
+
+// let insures = {
+//   building: [
+//     { name: "商業火災保險", prob: 95 },
+//     { name: "商業火災綜合保險", prob: 85 },
+//   ],
+//   electric: [{ name: "電子設備綜合保險", prob: 85 }],
+//   traffic: [],
+//   transport: [],
+// };
