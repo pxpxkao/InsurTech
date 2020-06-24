@@ -6,7 +6,7 @@ class AppNavbar extends Component {
       <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
         <div className="container">
           <a className="navbar-brand" href="/">
-            InsurTech
+            AINC
           </a>
           <button
             className="navbar-toggler"
